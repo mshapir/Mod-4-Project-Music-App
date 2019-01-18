@@ -4,7 +4,13 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users
       resources :playlists
-      resources :tracks
+      resources :tracks do
+        collection do
+          get :top_100
+          get :random
+          get :search
+        end
+      end
     end
   end
 end
