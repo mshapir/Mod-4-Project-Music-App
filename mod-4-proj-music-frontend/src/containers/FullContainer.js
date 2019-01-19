@@ -1,6 +1,7 @@
 import React from 'react';
 import User from '../components/User';
-import Track from '../components/Track'
+import Track from '../components/Track';
+
 
 class FullContainer extends React.Component {
 
