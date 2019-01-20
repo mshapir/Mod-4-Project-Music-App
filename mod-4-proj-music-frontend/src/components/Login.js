@@ -3,6 +3,7 @@ import React from 'react';
 class Login extends React.Component {
 
   state={
+    user: {},
     username: "",
     password: ""
   }
@@ -15,17 +16,35 @@ class Login extends React.Component {
 
   submitHandler = (event) => {
     event.preventDefault()
-    this.props.loginSubmitHandler(this.state)
-    this.setState({
-      username: "",
-      password: ""
-    })
+    let token = localStorage.getItem("token")
+    fetch('http://localhost:3001/api/v1/login', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        Action: "application/json",
+        Authorization: `${token}`
+      },
+      body: JSON.stringify({
+        username: this.state.username,
+        password: this.state.password
+      })
+    }).then(res=>res.json())
+      .then(data => {
+        localStorage.setItem("token", data.jwt)
+        console.log(data)
+        // this.setState({
+        //   user: data.user,
+        //   username: "",
+        //   password: ""
+        // })
+      })
   }
 
 
   render() {
     return(
       <form className="new-user-form" onSubmit={this.submitHandler}>
+
         <h2>Login:</h2>
         <div className="form-group">
           <label>Username</label>

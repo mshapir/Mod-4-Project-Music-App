@@ -11,8 +11,8 @@ class FullContainer extends React.Component {
   }
 
   componentDidMount(){
-    this.getTopHits()
     this.getUserList()
+    this.getTopHits()
   }
 
   getTopHits(){
@@ -37,30 +37,13 @@ class FullContainer extends React.Component {
   }
 
 
-  newUserSubmitHandler = (state) => {
-    fetch('http://localhost:3001/api/v1/users', {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: JSON.stringify({
-        name: state.name,
-        username: state.username,
-        password: state.password
-      })
-    })
-  }
-
-
   render() {
     return(
       <div>
         <h1>FullContainer</h1>
-        <User
-          users={this.state.userList}
-          newUserSubmitHandler={this.newUserSubmitHandler}
-          />
+          <User
+            users={this.state.userList}
+            />
       </div>
     )
   }

@@ -5,7 +5,8 @@ class NewUserForm extends React.Component {
   state={
     name: "",
     username: "",
-    password: ""
+    password: "",
+    user: ""
   }
 
   changeHandler = (event) => {
@@ -14,18 +15,50 @@ class NewUserForm extends React.Component {
     })
   }
 
+  componentDidMount() {
+    if (localStorage.length > 0){
+      let token = localStorage.getItem("token")
+      fetch('http://localhost:3001/api/v1/current_users', {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Action: "application/json",
+          Authorization: `${token}`
+        }
+      })
+    }
+  }
+
   submitHandler = (event) => {
     event.preventDefault()
-    this.props.newUserSubmitHandler(this.state)
-    this.setState({
-      name: "",
-      username: "",
-      password: ""
-    })
+    let token = localStorage.getItem("token")
+    fetch('http://localhost:3001/api/v1/users', {
+     method: "POST",
+     headers: {
+       "Content-Type": "application/json",
+       Accept: "application/json",
+       Authorization: `${token}`
+     },
+     body: JSON.stringify({
+       name: this.state.name,
+       username: this.state.username,
+       password_digest: this.state.password
+     })
+   }).then(res=>res.json())
+      .then(data=>{
+        localStorage.setItem("token", data.jwt)
+        this.setState({
+          name: "",
+          username: "",
+          password: "",
+          user: data.user
+        })
+      })
   }
 
 
   render() {
+
     return(
       <form className="new-user-form" onSubmit={this.submitHandler}>
         <h2>Make a New User:</h2>
