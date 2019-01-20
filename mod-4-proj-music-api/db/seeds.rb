@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'bcrypt'
+User.destroy_all
 
-
-recommendations = RSpotify::Recommendations.generate(limit: 20, seed_tracks: ['0c6xIDDpzE81m2q797ordA'])
+User.create!(name: "Raquel", username: "Raq", password_digest: BCrypt::Password.create("password"))
+User.create!(name: "Manny", username: "Man", password: BCrypt::Password.create("password"))
