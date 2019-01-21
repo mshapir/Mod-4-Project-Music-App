@@ -8,6 +8,7 @@ import NewUserForm from './components/NewUserForm';
 import Login from './components/Login';
 import PopTrack from './components/PopTrack'
 import RandomTrack from './components/RandomTrack'
+import Playlist from './components/Playlist'
 
 
 class App extends Component {
@@ -80,6 +81,12 @@ class App extends Component {
       <Sidebar />
       <Switch>
 
+      <Route
+        path="/playlist"
+        render={()=> (
+          <Playlist />
+        )} />
+
         <Route
           path="/popular"
           render={()=> (
@@ -120,7 +127,13 @@ class App extends Component {
 
         <Route
           path="/"
-          render={()=> <h1>Home</h1>} />
+          render={()=> (
+            <div className="home">
+            <h1>Home</h1>
+            <img src="https://images.pexels.com/photos/1626481/pexels-photo-1626481.jpeg" className="background" alt="bg"/>
+            </div>
+          )}
+          />
 
       </Switch>
       </div>

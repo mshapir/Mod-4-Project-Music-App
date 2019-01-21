@@ -8,7 +8,7 @@ const Sidebar = props => {
         Home
       </a>
 
-      <a className="menu-item" href="/playlists">
+      <a className="menu-item" href="/playlist">
         My Playlists
       </a>
 

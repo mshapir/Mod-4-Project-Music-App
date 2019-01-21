@@ -1,6 +1,6 @@
 import React from 'react';
-import NewUserForm from './NewUserForm';
-import Login from './Login'
+// import NewUserForm from './NewUserForm';
+// import Login from './Login'
 
 
 class User extends React.Component {
@@ -9,8 +9,7 @@ class User extends React.Component {
     return(
       <div>
         <h1>Users</h1>
-        <NewUserForm
-          />
+
       </div>
     )
   }

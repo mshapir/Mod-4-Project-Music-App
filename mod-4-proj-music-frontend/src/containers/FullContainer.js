@@ -1,5 +1,5 @@
 import React from 'react';
-import User from '../components/User';
+// import User from '../components/User';
 
 
 class FullContainer extends React.Component {
