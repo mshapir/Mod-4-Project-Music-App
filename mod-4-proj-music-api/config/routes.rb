@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users
         get '/current_user', to: 'auth#create'
+        get '/profile', to: 'users#profile'
         get '/signup', to: 'auth#create'
         post '/login', to: 'auth#create'
       resources :playlists
