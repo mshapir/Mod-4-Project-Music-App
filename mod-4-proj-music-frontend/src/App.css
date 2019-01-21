@@ -67,3 +67,10 @@
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
 }
+.cover-pic {
+  width: 100px;
+  height: 100px;
+}
+.container{
+  flex-wrap: wrap;
+}
