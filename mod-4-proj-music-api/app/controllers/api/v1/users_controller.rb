@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  # skip_before_action :authorized, only: [:create]
+  skip_before_action :authorized, only: [:create]
 
 
   def index
@@ -9,6 +9,7 @@ class Api::V1::UsersController < ApplicationController
 
 
   def create
+    
     @user = User.create(user_params)
     if @user.valid?
       @token = encode_token(user_id: @user.id)
@@ -30,6 +31,6 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:name, :username, :password_digest)
+    params.permit(:name, :username, :password)
   end
 end

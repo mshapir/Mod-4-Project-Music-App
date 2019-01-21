@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Route} from 'react-router-dom';
-import {Switch} from 'react-router-dom';
+import {Route, Switch, withRouter} from 'react-router-dom';
 import FullContainer from './containers/FullContainer';
 import Sidebar from './components/Sidebar';
 import NewUserForm from './components/NewUserForm';
 import Login from './components/Login';
-import PopTrack from './components/PopTrack'
-import RandomTrack from './components/RandomTrack'
-import Playlist from './components/Playlist'
+import PopTrack from './components/PopTrack';
+import RandomTrack from './components/RandomTrack';
+import Playlist from './components/Playlist';
+import UserProfile from './components/UserProfile';
+import Home from './components/Home';
 
 
 class App extends Component {
@@ -18,7 +19,9 @@ class App extends Component {
     topHits: [],
     userList: [],
     random: [],
-    isLoading: true
+    isLoading: true,
+    user: {},
+    login: false
   }
 
   componentDidMount(){
@@ -29,12 +32,31 @@ class App extends Component {
     if (this._isMounted) {
       this.setState({isLoading: false})
     }
+    if (localStorage.length > 0){
+      let token = localStorage.getItem("token")
+      fetch('http://localhost:3001/api/v1/current_users', {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Action: "application/json",
+          Authorization: `${token}`
+        }
+      })
+    }
+    if(localStorage.getItem("token") !== null) {
+      this.setState({
+        user: {
+          id: localStorage.getItem("id"),
+          username: localStorage.getItem("username"),
+          name: localStorage.getItem("name")
+        }
+      })
+    }
   }
 
   componentWillUnmount() {
     this._isMounted = false;
   }
-
 
   getTopHits(){
     //change address depending on port
@@ -74,17 +96,79 @@ class App extends Component {
       })
   }
 
+  loginSubmitHandler = (userInfo) => {
+    fetch('http://localhost:3001/api/v1/login', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        Action: "application/json",
+      },
+      body: JSON.stringify({
+        username: userInfo.username,
+        password: userInfo.password
+      })
+    }).then(res=>res.json())
+      .then(data => {
+        console.log(data)
+        this.setState({
+          user: data.user,
+          login: true
+        })
+        this.props.history.push("/profile")
+      })
+  }
+
+
+    newUserSubmitHandler = (event, userInfo) => {
+      event.preventDefault()
+      let token = localStorage.getItem("token")
+      fetch('http://localhost:3001/api/v1/users', {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+         Accept: "application/json",
+         Authorization: `${token}`
+       },
+       body: JSON.stringify({
+         name: userInfo.name,
+         username: userInfo.username,
+         password: userInfo.password
+       })
+     }).then(res=>res.json())
+        .then(data=>{
+          console.log(data);
+          localStorage.setItem("token", data.jwt)
+          this.setState({
+            user: data.user
+          })
+          this.props.history.push("/profile")
+        })
+
+    }
+
+    logout = () => {
+      localStorage.removeItem("token")
+      this.setState({
+        user: {},
+        login: false
+      })
+      this.props.history.push("/home")
+    }
+
   render() {
 
     return (
       <div className="App">
-      <Sidebar />
+      <Sidebar
+        login={this.state.login}
+        logout={this.logout}
+        />
       <Switch>
 
       <Route
         path="/playlist"
         render={()=> (
-          <Playlist />
+          <Playlist userInfo={this.state.user}/>
         )} />
 
         <Route
@@ -110,9 +194,18 @@ class App extends Component {
             />
 
         <Route
+          path="/profile"
+          render={()=>(
+            <UserProfile userInfo={this.state.user} />
+          )}
+          />
+
+        <Route
           path="/signup"
           render={()=>(
-            <NewUserForm />
+            <NewUserForm
+              newUserSubmitHandler={this.newUserSubmitHandler}
+              />
           )}
         />
 
@@ -120,18 +213,23 @@ class App extends Component {
           path="/login"
           render={()=> (
             <Login
-              users={this.state.userList}
+              loginSubmitHandler={this.loginSubmitHandler}
+              userInfo={this.state.user}
               />
             )}
             />
 
         <Route
+          path="/home"
+          render={()=> (
+            <Home />
+          )}
+          />
+
+        <Route
           path="/"
           render={()=> (
-            <div className="home">
-            <h1>Home</h1>
-            <img src="https://images.pexels.com/photos/1626481/pexels-photo-1626481.jpeg" className="background" alt="bg"/>
-            </div>
+            <Home />
           )}
           />
 
@@ -141,4 +239,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

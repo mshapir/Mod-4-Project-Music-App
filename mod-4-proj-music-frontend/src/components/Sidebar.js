@@ -1,33 +1,50 @@
 import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
+import {Link} from 'react-router-dom'
 
 const Sidebar = props => {
+
   return (
     <Menu>
-      <a className="menu-item" href="/">
-        Home
-      </a>
 
-      <a className="menu-item" href="/playlist">
-        My Playlists
-      </a>
+    <Link to={"/home"} >
+      <p className="menu-item">Home</p>
+    </Link>
 
-      <a className="menu-item" href="/popular">
-        Top Hits
-      </a>
+    <Link to={"/profile"} >
+      <p className="menu-item">My Profile</p>
+    </Link>
 
-      <a className="menu-item" href="/random">
-        Random Songs
-      </a>
+    <Link to={"/playlist"} >
+      <p className="menu-item">My Playlists</p>
+    </Link>
 
-      <a className="menu-item" href="/login">
-        Login
-      </a>
+    <Link to={"/popular"} >
+      <p className="menu-item">Top Hits</p>
+    </Link>
 
-      <a className="menu-item" href="/signup">
-        Signup
-      </a>
+    <Link to={"/random"} >
+      <p className="menu-item">Random Songs</p>
+    </Link>
+
+    {props.login ? (
+      <Link to={"/home"} >
+      <p className="menu-item" onClick={props.logout}>Logout</p>
+    </Link>
+    ) : (
+      <React.Fragment>
+        <Link to={"/login"} >
+          <p className="menu-item">Login</p>
+        </Link>
+
+        <Link to={"/signup"} >
+          <p className="menu-item">Signup</p>
+        </Link>
+      </React.Fragment>
+    )}
+
+
     </Menu>
   );
 };
-export default Sidebar
+export default Sidebar;
