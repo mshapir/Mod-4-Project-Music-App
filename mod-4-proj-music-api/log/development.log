@@ -6788,3 +6788,684 @@ No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists:
 Completed 200 OK in 6258ms (Views: 50.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:02:42 -0500
+  [1m[35m (7.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/raquelrandall/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::TracksController#top_100 as HTML
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 0.0ms)
+
+
+  
+RSpotify::MissingAuthentication (RSpotify::MissingAuthentication):
+  
+app/controllers/api/v1/tracks_controller.rb:11:in `top_100'
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:02:48 -0500
+Processing by Api::V1::TracksController#random as HTML
+Completed 500 Internal Server Error in 149ms (ActiveRecord: 0.0ms)
+
+
+  
+RSpotify::MissingAuthentication (RSpotify::MissingAuthentication):
+  
+app/controllers/api/v1/tracks_controller.rb:21:in `random'
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:03:12 -0500
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/raquelrandall/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::TracksController#random as HTML
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (14.14ms)
+Completed 200 OK in 2450ms (Views: 45.1ms | ActiveRecord: 27.5ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:03:31 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:03:31 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:03:31 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.76ms)
+Completed 200 OK in 74ms (Views: 41.5ms | ActiveRecord: 23.1ms)
+
+
+Processing by Api::V1::TracksController#random as */*
+Processing by Api::V1::TracksController#top_100 as */*
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (13.35ms)
+Completed 200 OK in 2739ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (22.54ms)
+Completed 200 OK in 4592ms (Views: 23.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:04:10 -0500
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:04:10 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:04:10 -0500
+Processing by Api::V1::TracksController#random as */*
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::TracksController#top_100 as */*
+  [1m[36mUser Load (25.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.44ms)
+Completed 200 OK in 201ms (Views: 95.9ms | ActiveRecord: 104.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (61.91ms)
+Completed 200 OK in 3010ms (Views: 70.4ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (23.74ms)
+Completed 200 OK in 5496ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:10:01 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:10:01 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:10:01 -0500
+Processing by Api::V1::TracksController#top_100 as */*
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (19.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (19.28ms)
+Completed 200 OK in 88ms (Views: 66.1ms | ActiveRecord: 19.3ms)
+
+
+Processing by Api::V1::TracksController#random as */*
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (30.28ms)
+Completed 200 OK in 3110ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (59.73ms)
+Completed 200 OK in 5583ms (Views: 61.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:13:28 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:13:29 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:13:29 -0500
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::TracksController#random as */*
+Processing by Api::V1::TracksController#top_100 as */*
+  [1m[36mUser Load (199.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.48ms)
+Completed 200 OK in 391ms (Views: 56.4ms | ActiveRecord: 311.6ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (126.37ms)
+Completed 200 OK in 5121ms (Views: 165.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:13:34 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:13:34 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:13:34 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (112.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+Processing by Api::V1::TracksController#top_100 as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.34ms)
+Completed 200 OK in 187ms (Views: 73.3ms | ActiveRecord: 112.7ms)
+
+
+Processing by Api::V1::TracksController#random as */*
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (93.39ms)
+Completed 200 OK in 8075ms (Views: 129.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:13:37 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:13:37 -0500
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:13:37 -0500
+Processing by Api::V1::TracksController#random as */*
+Processing by Api::V1::TracksController#top_100 as */*
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.93ms)
+Completed 200 OK in 36ms (Views: 14.6ms | ActiveRecord: 21.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (33.18ms)
+Completed 200 OK in 3996ms (Views: 97.9ms | ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 2577ms (ActiveRecord: 0.0ms)
+
+
+  
+RestClient::TooManyRequests (429 Too Many Requests):
+  
+app/models/track.rb:13:in `new_from_spotify_track'
+app/controllers/api/v1/tracks_controller.rb:23:in `block in random'
+app/controllers/api/v1/tracks_controller.rb:22:in `map'
+app/controllers/api/v1/tracks_controller.rb:22:in `random'
+Completed 500 Internal Server Error in 2804ms (ActiveRecord: 0.0ms)
+
+
+  
+RestClient::TooManyRequests (429 Too Many Requests):
+  
+app/models/track.rb:13:in `new_from_spotify_track'
+app/controllers/api/v1/tracks_controller.rb:13:in `block in top_100'
+app/controllers/api/v1/tracks_controller.rb:12:in `map'
+app/controllers/api/v1/tracks_controller.rb:12:in `top_100'
+Completed 500 Internal Server Error in 6109ms (ActiveRecord: 0.0ms)
+
+
+  
+RestClient::TooManyRequests (429 Too Many Requests):
+  
+app/models/track.rb:13:in `new_from_spotify_track'
+app/controllers/api/v1/tracks_controller.rb:13:in `block in top_100'
+app/controllers/api/v1/tracks_controller.rb:12:in `map'
+app/controllers/api/v1/tracks_controller.rb:12:in `top_100'
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:29:21 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:29:21 -0500
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:29:21 -0500
+Processing by Api::V1::TracksController#random as */*
+Processing by Api::V1::TracksController#top_100 as */*
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (21.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (25.18ms)
+Completed 200 OK in 85ms (Views: 50.9ms | ActiveRecord: 32.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (16.45ms)
+Completed 200 OK in 3512ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (44.2ms)
+Completed 200 OK in 5616ms (Views: 53.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:32:38 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:32:38 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:32:38 -0500
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::TracksController#random as */*
+Processing by Api::V1::TracksController#top_100 as */*
+  [1m[36mUser Load (137.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.44ms)
+Completed 200 OK in 306ms (Views: 62.2ms | ActiveRecord: 232.3ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (34.06ms)
+Completed 200 OK in 3641ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (26.75ms)
+Completed 200 OK in 5870ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:34:20 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:34:21 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:34:21 -0500
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::TracksController#random as */*
+Processing by Api::V1::TracksController#top_100 as */*
+  [1m[36mUser Load (110.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.54ms)
+Completed 200 OK in 447ms (Views: 79.0ms | ActiveRecord: 363.2ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (30.34ms)
+Completed 200 OK in 3155ms (Views: 32.1ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (69.92ms)
+Completed 200 OK in 5382ms (Views: 71.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:38:03 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:38:03 -0500
+Processing by Api::V1::UsersController#index as */*
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:38:03 -0500
+Processing by Api::V1::TracksController#top_100 as */*
+  [1m[36mUser Load (12.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.3ms)
+Processing by Api::V1::TracksController#random as */*
+Completed 200 OK in 85ms (Views: 60.3ms | ActiveRecord: 12.8ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (34.18ms)
+Completed 200 OK in 4368ms (Views: 37.8ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (27.95ms)
+Completed 200 OK in 6796ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:39:40 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:39:40 -0500
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:39:40 -0500
+Processing by Api::V1::TracksController#top_100 as */*
+Processing by Api::V1::TracksController#random as */*
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (10.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.08ms)
+Completed 200 OK in 45ms (Views: 32.1ms | ActiveRecord: 10.6ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (41.6ms)
+Completed 200 OK in 4009ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (96.74ms)
+Completed 200 OK in 6660ms (Views: 98.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:40:00 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:40:00 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:40:00 -0500
+Processing by Api::V1::TracksController#random as */*
+Processing by Api::V1::TracksController#top_100 as */*
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (47.25ms)
+Completed 200 OK in 141ms (Views: 96.6ms | ActiveRecord: 8.9ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (29.14ms)
+Completed 200 OK in 4918ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (45.76ms)
+Completed 200 OK in 6847ms (Views: 48.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:40:40 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:40:40 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:40:40 -0500
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::TracksController#top_100 as */*
+Processing by Api::V1::TracksController#random as */*
+  [1m[36mUser Load (102.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (49.71ms)
+Completed 200 OK in 238ms (Views: 120.0ms | ActiveRecord: 102.9ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (42.3ms)
+Completed 200 OK in 4011ms (Views: 83.5ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (50.63ms)
+Completed 200 OK in 6198ms (Views: 52.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:40:52 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:40:52 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:40:52 -0500
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::TracksController#random as */*
+  [1m[36mUser Load (28.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Processing by Api::V1::TracksController#top_100 as */*
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.05ms)
+Completed 200 OK in 65ms (Views: 36.2ms | ActiveRecord: 28.3ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (50.32ms)
+Completed 200 OK in 4034ms (Views: 63.4ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (39.72ms)
+Completed 200 OK in 6065ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:44:40 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:44:40 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:44:40 -0500
+Processing by Api::V1::TracksController#random as */*
+Processing by Api::V1::TracksController#top_100 as */*
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (120.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (30.29ms)
+Completed 200 OK in 283ms (Views: 158.7ms | ActiveRecord: 120.7ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (53.92ms)
+Completed 200 OK in 3603ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:44:44 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:44:44 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:44:44 -0500
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::TracksController#random as */*
+  [1m[36mUser Load (26.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.75ms)
+Completed 200 OK in 36ms (Views: 8.8ms | ActiveRecord: 26.5ms)
+
+
+Processing by Api::V1::TracksController#top_100 as */*
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (38.53ms)
+Completed 200 OK in 2994ms (Views: 91.4ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (34.93ms)
+Completed 200 OK in 7194ms (Views: 36.6ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (41.0ms)
+Completed 200 OK in 4892ms (Views: 61.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:44:59 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:44:59 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:44:59 -0500
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::TracksController#random as */*
+Processing by Api::V1::TracksController#top_100 as */*
+  [1m[36mUser Load (52.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.25ms)
+Completed 200 OK in 371ms (Views: 159.2ms | ActiveRecord: 207.3ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (20.07ms)
+Completed 200 OK in 4253ms (Views: 47.3ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (47.13ms)
+Completed 200 OK in 6131ms (Views: 48.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:45:33 -0500
+Processing by Api::V1::UsersController#index as */*
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:45:33 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:45:33 -0500
+Processing by Api::V1::TracksController#top_100 as */*
+Processing by Api::V1::TracksController#random as */*
+  [1m[36mUser Load (156.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.0ms)
+Completed 200 OK in 184ms (Views: 25.2ms | ActiveRecord: 156.9ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (28.67ms)
+Completed 200 OK in 3715ms (Views: 32.4ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (38.71ms)
+Completed 200 OK in 6060ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:48:17 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:48:17 -0500
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:48:17 -0500
+Processing by Api::V1::TracksController#random as */*
+Processing by Api::V1::TracksController#top_100 as */*
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (115.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.72ms)
+Completed 200 OK in 159ms (Views: 40.9ms | ActiveRecord: 115.5ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (51.38ms)
+Completed 200 OK in 3778ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (35.43ms)
+Completed 200 OK in 5784ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:48:34 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:48:34 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:48:34 -0500
+Processing by Api::V1::TracksController#random as */*
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::TracksController#top_100 as */*
+  [1m[36mUser Load (48.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.14ms)
+Completed 200 OK in 76ms (Views: 24.0ms | ActiveRecord: 48.8ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (11.19ms)
+Completed 200 OK in 3037ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:48:39 -0500
+Started GET "/api/v1/users" for ::1 at 2019-01-20 19:48:39 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 19:48:39 -0500
+Processing by Api::V1::TracksController#top_100 as */*
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::TracksController#random as */*
+  [1m[36mUser Load (16.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.39ms)
+Completed 200 OK in 21ms (Views: 4.0ms | ActiveRecord: 16.5ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (54.99ms)
+Completed 200 OK in 5172ms (Views: 70.8ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (31.07ms)
+Completed 200 OK in 2397ms (Views: 65.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 2970ms (ActiveRecord: 0.0ms)
+
+
+  
+RestClient::TooManyRequests (429 Too Many Requests):
+  
+app/models/track.rb:13:in `new_from_spotify_track'
+app/controllers/api/v1/tracks_controller.rb:13:in `block in top_100'
+app/controllers/api/v1/tracks_controller.rb:12:in `map'
+app/controllers/api/v1/tracks_controller.rb:12:in `top_100'
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 19:48:54 -0500
+Processing by Api::V1::TracksController#top_100 as HTML
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (58.85ms)
+Completed 200 OK in 4957ms (Views: 60.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 20:01:14 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 20:01:14 -0500
+Started GET "/api/v1/users" for ::1 at 2019-01-20 20:01:14 -0500
+Processing by Api::V1::TracksController#top_100 as */*
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (102.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+Processing by Api::V1::TracksController#random as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.32ms)
+Completed 200 OK in 410ms (Views: 111.0ms | ActiveRecord: 295.5ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (47.61ms)
+Completed 200 OK in 3667ms (Views: 93.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 20:01:20 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 20:01:20 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 20:01:20 -0500
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::TracksController#top_100 as */*
+  [1m[36mUser Load (37.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.96ms)
+Completed 200 OK in 79ms (Views: 21.9ms | ActiveRecord: 56.7ms)
+
+
+Processing by Api::V1::TracksController#random as */*
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (37.79ms)
+Completed 200 OK in 6355ms (Views: 42.6ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (10.7ms)
+Completed 200 OK in 2474ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (31.37ms)
+Completed 200 OK in 4372ms (Views: 32.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 20:01:31 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 20:01:31 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 20:01:31 -0500
+Processing by Api::V1::TracksController#top_100 as */*
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::TracksController#random as */*
+  [1m[36mUser Load (35.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.17ms)
+Completed 200 OK in 41ms (Views: 4.4ms | ActiveRecord: 35.7ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (20.22ms)
+Completed 200 OK in 2297ms (Views: 21.8ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (31.5ms)
+Completed 200 OK in 4560ms (Views: 32.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 20:02:16 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 20:02:16 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 20:02:16 -0500
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::TracksController#top_100 as */*
+Processing by Api::V1::TracksController#random as */*
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.96ms)
+Completed 200 OK in 115ms (Views: 9.9ms | ActiveRecord: 104.5ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (38.78ms)
+Completed 200 OK in 2970ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2019-01-20 20:02:20 -0500
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 20:02:20 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 20:02:20 -0500
+Processing by Api::V1::UsersController#index as */*
+Processing by Api::V1::TracksController#random as */*
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.25ms)
+Processing by Api::V1::TracksController#top_100 as */*
+Completed 200 OK in 42ms (Views: 38.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/v1/current_users" for ::1 at 2019-01-20 20:02:20 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/current_users"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (57.95ms)
+Completed 200 OK in 5330ms (Views: 60.5ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (16.93ms)
+Completed 200 OK in 2554ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 2660ms (ActiveRecord: 0.0ms)
+
+
+  
+RestClient::TooManyRequests (429 Too Many Requests):
+  
+app/models/track.rb:13:in `new_from_spotify_track'
+app/controllers/api/v1/tracks_controller.rb:13:in `block in top_100'
+app/controllers/api/v1/tracks_controller.rb:12:in `map'
+app/controllers/api/v1/tracks_controller.rb:12:in `top_100'
+Started GET "/api/v1/users" for ::1 at 2019-01-20 20:02:27 -0500
+Processing by Api::V1::UsersController#index as */*
+Started GET "/api/v1/tracks/top_100" for ::1 at 2019-01-20 20:02:27 -0500
+Started GET "/api/v1/tracks/random" for ::1 at 2019-01-20 20:02:27 -0500
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Processing by Api::V1::TracksController#top_100 as */*
+  ↳ app/controllers/api/v1/users_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.21ms)
+Processing by Api::V1::TracksController#random as */*
+Completed 200 OK in 43ms (Views: 39.9ms | ActiveRecord: 2.9ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "Suite bergamasque: Suite bergamasque: III. Clair d...", artists: "Claude Debussy", image: "https://i.scdn.co/image/11f18ce931e87f4cb28407f331...", duration: 279160.0, popularity: 64, preview: "https://p.scdn.co/mp3-preview/9d2f2efefe64782278a1...", created_at: nil, updated_at: nil, spotify_id: "6N7JzrteJv8lsr1GWYyu0b">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (50.85ms)
+Completed 200 OK in 3085ms (Views: 96.5ms | ActiveRecord: 0.0ms)
+
+
+No serializer found for resource: #<Track id: nil, name: "1 of a Kind", artists: "Blacklite District", image: "https://i.scdn.co/image/2d1e6a93ed39a4dbc2350baa83...", duration: 134002.0, popularity: 55, preview: "https://p.scdn.co/mp3-preview/b4cdf603b9a321a00cdc...", created_at: nil, updated_at: nil, spotify_id: "37xLpW0AsrZsj5Wts3ACji">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (51.64ms)
+Completed 200 OK in 5586ms (Views: 53.0ms | ActiveRecord: 0.0ms)
+
+
