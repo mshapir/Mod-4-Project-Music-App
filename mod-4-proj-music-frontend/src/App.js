@@ -7,12 +7,16 @@ import {Switch} from 'react-router-dom';
 import NewUserForm from './components/NewUserForm';
 import Login from './components/Login';
 
+
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Sidebar />
         <Switch>
+        <Route
+        path="/popular"
+        component={FullContainer}/>
           <Route
             path="/signup"
             component={NewUserForm} />
@@ -21,7 +25,7 @@ class App extends Component {
             component={Login} />
           <Route
             path="/"
-            render={()=> <h1>Home</h1>} />
+            render={()=> <h1>home</h1>} />
         </Switch>
       </div>
     );

@@ -1,7 +1,6 @@
 import React from 'react';
 
 class NewUserForm extends React.Component {
-
   state={
     name: "",
     username: "",
@@ -26,6 +25,7 @@ class NewUserForm extends React.Component {
 
 
   render() {
+    console.log(this.props)
     return(
       <form className="new-user-form" onSubmit={this.submitHandler}>
         <h2>Make a New User:</h2>
