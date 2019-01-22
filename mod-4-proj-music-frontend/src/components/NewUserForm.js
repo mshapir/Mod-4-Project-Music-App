@@ -14,20 +14,11 @@ class NewUserForm extends React.Component {
     })
   }
 
-  submitHandler = (event) => {
-    event.preventDefault()
-    this.props.newUserSubmitHandler(this.state)
-    this.setState({
-      name: "",
-      username: "",
-      password: ""
-    })
-  }
-
 
   render() {
+
     return(
-      <form className="new-user-form" onSubmit={this.submitHandler}>
+      <form className="new-user-form" onSubmit={(e) => this.props.newUserSubmitHandler(e, this.state)}>
         <h2>Make a New User:</h2>
         <div className="form-group">
           <label>Name</label>

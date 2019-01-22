@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-header {
@@ -66,4 +67,18 @@
 
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+.cover-pic {
+  width: 100px;
+  height: 100px;
+}
+.container{
+  flex-wrap: wrap;
+}
+.home {
+
+}
+.background {
+  height: 100%;
+  width: 100%;
 }

@@ -13,19 +13,11 @@ class Login extends React.Component {
     })
   }
 
-  submitHandler = (event) => {
-    event.preventDefault()
-    this.props.loginSubmitHandler(this.state)
-    this.setState({
-      username: "",
-      password: ""
-    })
-  }
-
 
   render() {
     return(
-      <form className="new-user-form" onSubmit={this.submitHandler}>
+      <form className="new-user-form" onSubmit={this.loginSubmitHandler.bind(this)}>
+
         <h2>Login:</h2>
         <div className="form-group">
           <label>Username</label>
@@ -38,6 +30,12 @@ class Login extends React.Component {
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
     )
+  }
+
+  loginSubmitHandler(e){
+    e.preventDefault()
+    this.props.loginSubmitHandler(this.state)
+    this.setState({username:"", password:""})
   }
 }
 export default Login;
