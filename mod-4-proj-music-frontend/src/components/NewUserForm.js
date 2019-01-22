@@ -15,11 +15,6 @@ class NewUserForm extends React.Component {
 
 
   render() {
-<<<<<<< HEAD
-
-=======
-    console.log(this.props)
->>>>>>> Manny-Shapir
     return(
       <form className="new-user-form" onSubmit={(e) => this.props.newUserSubmitHandler(e, this.state)}>
         <h2>Make a New User:</h2>
