@@ -14,7 +14,7 @@ class Search extends React.Component {
 
   handleSubmit = (event) => {
 		event.preventDefault()
-		this.props.fetchSongs(this.state.query)
+		this.props.fetchSearchedSongs(this.state.query)
 	}
 
   render() {

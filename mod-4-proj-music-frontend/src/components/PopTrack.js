@@ -5,7 +5,7 @@ class PopTrack extends React.Component {
 
 
   render() {
-    
+
     return(
       <div className="container">
         {this.props.topHits.map(track => (
@@ -18,6 +18,7 @@ class PopTrack extends React.Component {
             preview={track.preview}
             duration={track.duration}
             spotify_id={track.spotify_id}
+            addToPlaylist={this.props.addToPlaylist}
           />
         ))}
       </div>

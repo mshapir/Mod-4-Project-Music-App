@@ -85,3 +85,9 @@
 .menu-item {
   color: white;
 }
+.card {
+  background: rgba(180, 99, 71, 0.7);
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}

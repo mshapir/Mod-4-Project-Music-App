@@ -16,6 +16,7 @@ class RandomTrack extends React.Component {
             preview={track.preview}
             duration={track.duration}
             spotify_id={track.spotify_id}
+            addToPlaylist={this.props.addToPlaylist}
           />
         ))}
       </div>

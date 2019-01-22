@@ -12,15 +12,7 @@ class FullContainer extends React.Component {
     searched: []
   }
 
-  fetchSearchedSongs = (query = 'thank you') => {
-		fetch(`http://localhost:3000/api/v1/tracks/search?q=${query}`)
-		.then(r => r.json())
-		.then(data => {
-			this.setState({
-				topHits: data
-			})
-		})
-	}
+
 
   render() {
     return this.state.topHits.length > 0  ?
