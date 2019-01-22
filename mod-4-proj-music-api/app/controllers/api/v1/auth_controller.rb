@@ -24,6 +24,7 @@ skip_before_action :authorized, only: [:create]
   private
 
   def user_login_params
-    params.permit(:username, :password)
+    # byebug
+    params.require(:auth).permit(:username, :password)
   end
 end

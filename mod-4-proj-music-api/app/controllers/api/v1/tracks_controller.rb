@@ -6,6 +6,7 @@ class Api::V1::TracksController < ApplicationController
   end
 
   def top_100
+    # byebug
     # top 100 playlist for 2019 tracks
     # https://open.spotify.com/playlist/2kpoUUJ5a4Cw3feTkFJhZ2
     s_tracks = RSpotify::Playlist.find("1276640268","2kpoUUJ5a4Cw3feTkFJhZ2").tracks
@@ -17,6 +18,7 @@ class Api::V1::TracksController < ApplicationController
   end
 
   def random
+    # byebug
     # random playlist from spotify's featured playlists endpoint's tracks
     s_tracks = RSpotify::Playlist.browse_featured.first.tracks
     @tracks = s_tracks.map do |s_track|

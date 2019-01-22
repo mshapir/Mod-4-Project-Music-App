@@ -5,7 +5,7 @@ class UserProfile extends React.Component {
     console.log(this.props)
     return(
       <div>
-        <h1>Profile</h1>
+        <h1>Welcome Back {this.props.userInfo.name}</h1>
 
       </div>
     )
