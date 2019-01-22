@@ -26,31 +26,8 @@ class App extends Component {
 
   componentDidMount(){
     this._isMounted = true;
-    this.getUserList()
-    this.getTopHits()
-    this.getRandom()
     if (this._isMounted) {
       this.setState({isLoading: false})
-    }
-    if (localStorage.length > 0){
-      let token = localStorage.getItem("token")
-      fetch('http://localhost:3001/api/v1/current_users', {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Action: "application/json",
-          Authorization: `${token}`
-        }
-      })
-    }
-    if(localStorage.getItem("token") !== null) {
-      this.setState({
-        user: {
-          id: localStorage.getItem("id"),
-          username: localStorage.getItem("username"),
-          name: localStorage.getItem("name")
-        }
-      })
     }
   }
 
@@ -60,8 +37,11 @@ class App extends Component {
 
   getTopHits(){
     //change address depending on port
-    fetch('http://localhost:3001/api/v1/tracks/top_100')
-      .then(res=>res.json())
+    fetch('http://localhost:3001/api/v1/tracks/top_100', {
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+    }).then(res=>res.json())
       .then(data => {
         if (this._isMounted) {
           this.setState({
@@ -74,7 +54,7 @@ class App extends Component {
 
   getRandom(){
     //change address depending on port
-    fetch('http://localhost:3001/api/v1/tracks/random')
+    fetch('http://localhost:3001/api/v1/tracks/random', {headers: {Authorization: localStorage.getItem("token")} })
       .then(res=>res.json())
       .then(data => {
         if (this._isMounted) {
@@ -109,12 +89,14 @@ class App extends Component {
       })
     }).then(res=>res.json())
       .then(data => {
-        console.log(data)
+        localStorage.setItem("token", data.jwt)
         this.setState({
           user: data.user,
           login: true
         })
         this.props.history.push("/profile")
+        this.getRandom()
+        this.getTopHits()
       })
   }
 
@@ -136,12 +118,13 @@ class App extends Component {
        })
      }).then(res=>res.json())
         .then(data=>{
-          console.log(data);
           localStorage.setItem("token", data.jwt)
           this.setState({
             user: data.user
           })
           this.props.history.push("/profile")
+          this.getRandom()
+          this.getTopHits()
         })
 
     }
