@@ -114,7 +114,8 @@ class App extends Component {
        body: JSON.stringify({
          name: userInfo.name,
          username: userInfo.username,
-         password: userInfo.password
+         password: userInfo.password,
+         login: true
        })
      }).then(res=>res.json())
         .then(data=>{
