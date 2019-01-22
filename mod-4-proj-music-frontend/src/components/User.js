@@ -4,6 +4,7 @@ import NewUserForm from './NewUserForm';
 
 class User extends React.Component {
   render() {
+    console.log(this.props)
     return(
       <div>
         <h1>Users</h1>

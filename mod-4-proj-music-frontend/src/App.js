@@ -12,6 +12,7 @@ import UserProfile from './components/UserProfile';
 import Home from './components/Home';
 
 
+
 class App extends Component {
   _isMounted = false;
 
@@ -159,6 +160,7 @@ class App extends Component {
 
     return (
       <div className="App">
+<<<<<<< HEAD
       <Sidebar
         login={this.state.login}
         logout={this.logout}
@@ -234,6 +236,23 @@ class App extends Component {
           />
 
       </Switch>
+=======
+        <Sidebar />
+        <Switch>
+        <Route
+        path="/popular"
+        component={FullContainer}/>
+          <Route
+            path="/signup"
+            component={NewUserForm} />
+          <Route
+            path="/login"
+            component={Login} />
+          <Route
+            path="/"
+            render={()=> <h1>home</h1>} />
+        </Switch>
+>>>>>>> Manny-Shapir
       </div>
     );
   }
