@@ -7,6 +7,7 @@ class CreateTracks < ActiveRecord::Migration[5.2]
       t.float :duration
       t.integer :popularity
       t.string :preview
+      t.string :spotify_id
 
       t.timestamps
     end
